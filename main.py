@@ -23,7 +23,8 @@ def get_hostname(url):
 class Blogger(object):
 
     def __init__(self, config):
-        self.mongo = pymongo.MongoClient(config['mongo_host'], config['mongo_port'])['blog'].myposts
+        self.mongo = pymongo.MongoClient(config['mongo_host'], config[
+                                         'mongo_port'])['blog'].myposts
         template_path = os.path.join(os.path.dirname(__file__), 'templates')
         self.jinja_env = Environment(loader=FileSystemLoader(template_path),
                                      autoescape=True)
@@ -34,7 +35,6 @@ class Blogger(object):
             Rule('/<_id>', endpoint='post_detail')
 
         ])
-
 
     def new_post(self, request):
         error = None
@@ -112,9 +112,3 @@ if __name__ == '__main__':
     from werkzeug.serving import run_simple
     app = create_app()
     run_simple('127.0.0.1', 5000, app, use_debugger=True, use_reloader=True)
-
-
-
-
-
-
