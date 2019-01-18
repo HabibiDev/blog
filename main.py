@@ -1,11 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-    shortly
-    ~~~~~~~
-    A simple URL shortener using Werkzeug and mongo.
-    :copyright: (c) 2014 by the Werkzeug Team, see AUTHORS for more details.
-    :license: BSD, see LICENSE for more details.
-"""
 import os
 import datetime
 import pymongo
@@ -28,7 +20,7 @@ def get_hostname(url):
     return urlparse.urlparse(url).netloc
 
 
-class Shortly(object):
+class Blogger(object):
 
     def __init__(self, config):
         self.mongo = pymongo.MongoClient(config['mongo_host'], config['mongo_port'])['blog'].myposts
@@ -105,7 +97,7 @@ class Shortly(object):
 
 
 def create_app(mongo_host='localhost', mongo_port=27017, with_static=True):
-    app = Shortly({
+    app = Blogger({
         'mongo_host':       mongo_host,
         'mongo_port':       mongo_port
     })
