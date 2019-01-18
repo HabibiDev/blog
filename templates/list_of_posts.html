@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block title %}My Posts{% endblock %}
+{% block body %}
+	{%for post in posts%}
+		<h2><a href = "/{{post._id}}">{{ post.title }}</a></h2>
+		<p>{{post.short_description}}</p>  
+    	<p>{{post.date_publish.strftime('%Y-%m-%d %H:%M:%S')}}</p>
+    {%endfor%}
+    <p><a href = "/add_post">Add New Post</a></p>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}Create New Post{% endblock %}
+{% block body %}
+  <h2>Write your post</h2>
+  <form action="" method=post id='text'>
+    {% if error %}
+      <p class=error><strong>Error:</strong> {{ error }}
+    {% endif %}
+    <p>Post:</p>
+      <input type=text name=title value = title class=urlinput form="text" size="200">
+      <p><textarea form="text" name =description rows='10' cols="50">Write here</textarea></p>
+      <input type=submit value="Create" form="text">
+  </form>
+{% endblock %}

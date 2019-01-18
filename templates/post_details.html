@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block title %}My Posts{% endblock %}
+{% block body %}
+	<h2>{{post.title}}</h2>
+	
+	<p>{{post.description}}</p>
+	 
+    <p>{{post.date_publish.strftime('%Y-%m-%d %H:%M:%S')}}</p>
+{% endblock %}

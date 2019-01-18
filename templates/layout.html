@@ -1,0 +1,10 @@
+<!doctype html>
+<head>
+<title>MyPosts</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<div  class=box style = 'word-wrap: break-word;'>
+  <h1><a href=/>{% block title %}MyPosts{% endblock %}</a></h1>
+  <p class=tagline>This Posts written with Werkzeug
+  {% block body %}{% endblock %}
+</div>
